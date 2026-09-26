@@ -25,3 +25,6 @@ content1.txt
 # IDE
 .idea/
 .vscode/
+
+# 本地脚本，不进仓库
+*.bat
