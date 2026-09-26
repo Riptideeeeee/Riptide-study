@@ -1,0 +1,22 @@
+一、需求描述
+图书馆里有好多书，每本书都有书名、作者和借出状态。读者可以借书和还书。
+
+二、要求实现的类
+1. Book 类（书）
+属性	类型	说明
+title	字符串	书名
+author	字符串	作者
+is_borrowed	布尔值	是否已借出（默认 False）
+方法	说明
+borrow()	借书：如果未被借出，改为已借出；否则提示“已被借走”
+return_book()	还书：如果已借出，改为未借出；否则提示“未被借出”
+show()	显示书籍信息
+2. Library 类（图书馆）
+属性	类型	说明
+books	列表	存放所有 Book 对象
+方法	说明
+add_book(book)	添加一本书到图书馆
+show_all()	显示所有书籍的状态
+find_book(title)	根据书名查找书，返回书对象或 None
+borrow_book(title)	借书（先查找，再借）
+return_book(title)	还书（先查找，再还）

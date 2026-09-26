@@ -1,25 +1,29 @@
 # Riptide-study
 
-编程学习记录。Python 和 C 两条线，各自包含 LeetCode 题解和练习。
+编程学习记录。Python 和 C 两条线，各自包含题解、练习和项目。
 
 ## 目录结构
 
 ```
 py/
-├── leetcode/
-│   ├── array_string/    数组与字符串    15 题
-│   ├── dp/              动态规划        17 题
-│   ├── greedy/          贪心与区间       1 题
-│   └── linked_list/     链表             1 题
-├── scripts/             调用 DeepSeek 的脚本
-├── tkinter/             图形界面练习
-├── spider/              爬虫练习
-└── web/                 网页练习
+├── leetcode/           LeetCode 题解
+│   ├── array_string/   数组与字符串   15 题
+│   ├── dp/             动态规划       17 题
+│   ├── greedy/         贪心与区间      1 题
+│   └── linked_list/    链表            1 题
+├── games/              游戏
+├── projects/           完整项目
+├── practice/           练习题
+├── tkinter/            图形界面
+├── spider/             爬虫
+├── web/                网页
+├── scripts/            小脚本
+└── notes/              学习笔记
 
 c/
-├── leetcode/            C 语言刷题
-├── basics/              语法练习
-└── projects/            完整项目
+├── leetcode/           C 语言刷题
+├── basics/             语法练习
+└── projects/           完整项目
 ```
 
 ## Python 题解
@@ -59,7 +63,6 @@ c/
 | 198 | 打家劫舍 | 中等 |
 | 221 | 最大正方形（另有修改版） | 中等 |
 | 509 | 斐波那契数 | 简单 |
-| 516 | 最长回文子序列 | 中等 |
 | 740 | 删除并获得点数 | 中等 |
 | 746 | 使用最小花费爬楼梯 | 简单 |
 | 931 | 下降路径最小和 | 中等 |
@@ -77,36 +80,80 @@ c/
 | --- | --- | --- |
 | 876 | 链表的中间结点 | 简单 |
 
-## Python 练习
-
-### tkinter `py/tkinter`
+## 游戏 `py/games`
 
 | 文件 | 说明 |
 | --- | --- |
-| Guess Num.py | 猜数字小游戏 |
+| 2048.py | 终端版 2048，curses 实现，记录最高分 |
+| 俄罗斯方块.py | tkinter 版俄罗斯方块 |
+| 文字冒险.py | 文字冒险，含事件系统和 Boss 战 |
+| pygame/game1.py | pygame 入门，星星移动 |
+| pygame/game1 ai.py | 接水果小游戏 |
+| 飞机大战/plane.py | 飞机大战 |
+| 飞行棋/main.py | 飞行棋 |
+| 飞行棋/test.py | 飞行棋相关测试 |
+
+## 完整项目 `py/projects`
+
+| 文件 | 说明 |
+| --- | --- |
+| bookstore/ | 书店管理系统，面向对象 + 数据文件 |
+| 记事本/main.py | tkinter 记事本 |
+| 学生管理.py | 学生信息管理，文件持久化 |
+| ai写的学生管理.py | 同上，AI 生成的版本 |
+| 图书馆管理.py | 图书馆借还书，面向对象 |
+| 成绩管理.py | 学生成绩管理，字典存储 |
+
+## 练习题 `py/practice`
+
+| 文件 | 说明 |
+| --- | --- |
+| 函数.py | 函数基础 |
+| 函数练习1.py | 温度转换 |
+| 函数练习2.py | 员工薪资管理 |
+| 文件练习.py | 文件读写练习 |
+| 文件答案.py | 文件读写答案 |
+| 卖水果.py | 卖水果练习 |
+| 卖水果2.py | 卖水果练习，改进版 |
+| 卖水果ai.py | 卖水果练习，AI 版本 |
+
+## 图形界面 `py/tkinter`
+
+| 文件 | 说明 |
+| --- | --- |
+| Guess Num.py | 猜数字游戏 |
 | Guess Num修改版.py | 猜数字，改进版 |
-| 打地鼠.py | 打地鼠小游戏 |
-| text.py | 文本框组件练习 |
+| 打地鼠.py | 打地鼠游戏 |
+| text.py | 文本框组件 |
 | 测试1.py | 零散测试 |
+| 点名.py | 随机点名器 |
+| 黏贴板.py | 剪贴板工具 |
+| 函数绘制器.py | 数学函数图像绘制 |
+| 消息框练习.py | 各类消息弹窗 |
+| 输入框练习.py | 输入对话框 |
+| 确认框练习.py | 确认对话框 |
+| 最小窗口.py | 最小的 tkinter 窗口 |
 
-### 爬虫 `py/spider`
+## 爬虫与网页 `py/spider`、`py/web`
 
 | 文件 | 说明 |
 | --- | --- |
-| 学习1.py | 爬虫练习 |
-| web.html | 练习用的页面 |
+| spider/学习1.py | 爬虫练习 |
+| spider/web.html | 练习用的页面 |
+| web/测试.py | 网页相关练习 |
 
-### 网页 `py/web`
-
-| 文件 | 说明 |
-| --- | --- |
-| 测试.py | 网页相关练习 |
-
-## Python 脚本 `py/scripts`
+## 脚本 `py/scripts`
 
 | 文件 | 说明 |
 | --- | --- |
 | 使用python调用deepseek的api.py | 命令行调用 DeepSeek 接口，输出思维链，对话历史存 json |
+
+## 学习笔记 `py/notes`
+
+| 文件 | 说明 |
+| --- | --- |
+| 学习.md | Python 学习笔记 |
+| markdown练习.md | Markdown 语法练习 |
 
 ## C 语言
 
