@@ -3,7 +3,7 @@ void print_name(char *name){
 	printf("\n%s",name);
 }
 int main(){
-	char *names[]={"张三", "李四", "王五", "赵六", "孙七"};
+	char *names[]={"寮犱笁", "鏉庡洓", "鐜嬩簲", "璧靛叚", "瀛欎竷"};
 	for (int i=0;i<5;i++){
 		print_name(names[i]);
 	}

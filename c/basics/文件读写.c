@@ -13,21 +13,21 @@ int main() {
         {1003, "Cindy", 78.5}
     };
 
-    // ´ò¿ªÎÄ¼ş£¨Ğ´Ä£Ê½£©
+    // æ‰“å¼€æ–‡ä»¶ï¼ˆå†™æ¨¡å¼ï¼‰
     FILE *fp = fopen("students.txt", "w");
     if (fp == NULL) {
-        printf("ÎÄ¼ş´ò¿ªÊ§°Ü£¡\n");
+        printf("æ–‡ä»¶æ‰“å¼€å¤±è´¥ï¼\n");
         return 1;
     }
 
-    // Ğ´ÈëÊı¾İ
+    // å†™å…¥æ•°æ®
     for (int i = 0; i < 3; i++) {
         fprintf(fp, "%d %s %.1f\n", students[i].id, students[i].name, students[i].score);
     }
 
-    // ¹Ø±ÕÎÄ¼ş
+    // å…³é—­æ–‡ä»¶
     fclose(fp);
-    printf("Ğ´Èë³É¹¦£¡\n");
+    printf("å†™å…¥æˆåŠŸï¼\n");
 
     return 0;
 }

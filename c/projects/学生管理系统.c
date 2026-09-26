@@ -34,53 +34,53 @@ struct Student* delete_student(struct Student *head, int id){
 	struct Student *current=head;
 	char confirm;
 	if (current->id==id){
-			printf("ÊÇ·ñÒªÉ¾³ý£¿\nY/N:");
+			printf("是否要删除？\nY/N:");
 			scanf(" %c",&confirm);
 			if (confirm=='Y'||confirm=='y'){
 				struct Student *temp=current;
 				current=current->next;
 				free(temp);
-				printf("É¾³ý³É¹¦!");
+				printf("删除成功!");
 				return current;
 			}else if(confirm=='N'||confirm=='n'){
 				return head;
 			}else{
-				printf("´íÎóÊäÈë£¬È¡ÏûÉ¾³ý.");
+				printf("错误输入，取消删除.");
 				return head;
 			}
 		}
 	while (current->next!=NULL){
 		if (current->next->id==id){
-			printf("ÊÇ·ñÒªÉ¾³ý£¿\nY/N:");
+			printf("是否要删除？\nY/N:");
 			scanf(" %c",&confirm);
 			if (confirm=='Y'||confirm=='y'){
 				struct Student *temp=current->next;
 				current->next=current->next->next;
 				free(temp);
-				printf("É¾³ý³É¹¦!");
+				printf("删除成功!");
 				return head;
 			}else if(confirm=='N'||confirm=='n'){
 				return head;
 			}else{
-				printf("´íÎóÊäÈë£¬È¡ÏûÉ¾³ý.");
+				printf("错误输入，取消删除.");
 				return head;
 			}
 		}
 		current=current->next;
 	}
-	printf("´íÎóid£¬È¡ÏûÉ¾³ý\n");
+	printf("错误id，取消删除\n");
 	return head;
 }
 void find_student(struct Student *head, int id){
 	struct Student* current=head;
 	while (current!=NULL){
 		if (current->id==id){
-			printf("\n¸ÃÑ§ÉúÃû×ÖÊÇ%s, Ñ§ºÅÊÇ%d, ³É¼¨Îª%.1f\n",current->name,current->id,current->score);
+			printf("\n该学生名字是%s, 学号是%d, 成绩为%.1f\n",current->name,current->id,current->score);
 			return;
 		}
 		current=current->next;
 	}
-	printf("\nÎ´ÕÒµ½¸ÃÑ§Éú\n");
+	printf("\n未找到该学生\n");
 	return;
 }
 struct Student* update_score(struct Student *head, int id, float new_score){
@@ -88,12 +88,12 @@ struct Student* update_score(struct Student *head, int id, float new_score){
 	while(current!=NULL){
 		if (current->id==id){
 			current->score=new_score;
-			printf("ÐÞ¸Ä³É¹¦!");
+			printf("修改成功!");
 			return head;
 		}
 		current=current->next;
 	}
-	printf("Î´ÕÒµ½¸ÃÑ§Éú£¡");
+	printf("未找到该学生！");
 	return head;
 }
 void print_all(struct Student *head){
@@ -122,7 +122,7 @@ void save_to_file(struct Student *head){
 		current=current->next;
 	}
 	fclose(fp);
-	printf("±£´æ³É¹¦!\n");
+	printf("保存成功!\n");
 }
 struct Student* load_from_file(struct Student* head){
 	FILE *fp=fopen("stu.txt","r");
@@ -142,7 +142,7 @@ void free_all(struct Student *head){
 		current=current->next;
 		free(temp);
 	}
-	printf("ÒÑÊÍ·ÅÄÚ´æ!\n");
+	printf("已释放内存!\n");
 }
 int main(){
 	FILE *fp=fopen("stu.txt","r");
@@ -156,9 +156,9 @@ int main(){
 		fprintf(fp,"1001 Alice 85.5\n1002 Bob 92.0\n1003 Cindy 78.5");
 		fclose(fp);
 	}else{
-		int ch = fgetc(fp);  // ¶ÁÈ¡µÚÒ»¸ö×Ö·û
+		int ch = fgetc(fp);  // 读取第一个字符
     	if (ch == EOF) {
-        	// ÎÄ¼þÎª¿Õ£¬Ð´Èë³õÊ¼Êý¾Ý
+        	// 文件为空，写入初始数据
         	fclose(fp);
         	fp = fopen("stu.txt", "w");
         	fprintf(fp, "1001 Alice 85.5\n1002 Bob 92.0\n1003 Cindy 78.5");
@@ -166,96 +166,96 @@ int main(){
     	}else{
     		fclose(fp);
 		}
-	}//ÅÐ¶ÏÎÄ¼þÊÇ·ñ´æÔÚ£¬²»´æÔÚÔòÐ´Èë³õÊ¼Êý¾Ý
+	}//判断文件是否存在，不存在则写入初始数据
 	head=load_from_file(head);
 	do {
 		system("cls");
 		printf("================================\n"
-			   "   Ñ§Éú³É¼¨¹ÜÀíÏµÍ³\n"
+			   "   学生成绩管理系统\n"
 			   "================================\n"
-			   "1. Ìí¼ÓÑ§Éú\n"
-			   "2. É¾³ýÑ§Éú\n"
-			   "3. ²éÕÒÑ§Éú\n"
-			   "4. ÐÞ¸Ä³É¼¨\n"
-			   "5. ÏÔÊ¾È«²¿\n"
-			   "6. ¼ÆËãÆ½¾ù·Ö\n"
-			   "7. ±£´æµ½ÎÄ¼þ\n"
-			   "8. ´ÓÎÄ¼þ¶ÁÈ¡\n"
-			   "0. ÍË³ö\n"
+			   "1. 添加学生\n"
+			   "2. 删除学生\n"
+			   "3. 查找学生\n"
+			   "4. 修改成绩\n"
+			   "5. 显示全部\n"
+			   "6. 计算平均分\n"
+			   "7. 保存到文件\n"
+			   "8. 从文件读取\n"
+			   "0. 退出\n"
 			   "================================\n"
-			   "ÇëÑ¡Ôñ£º");
+			   "请选择：");
 		scanf("%d",&choise);
 		switch (choise){
-			case 1://1. Ìí¼ÓÑ§Éú
-				printf("ÊäÈëÑ§ÉúÑ§ºÅ: ");
+			case 1://1. 添加学生
+				printf("输入学生学号: ");
 				scanf("%d",&new_id);
-				printf("ÊäÈëÑ§ÉúÐÕÃû(ÇëÊäÈëÓ¢ÎÄ): ");
+				printf("输入学生姓名(请输入英文): ");
 				scanf("%s",new_name);
-				printf("ÊäÈëÑ§Éú³É¼¨: ");
+				printf("输入学生成绩: ");
 				scanf("%f",&new_score);
 				add_student(head,new_id,new_name,new_score);
 				save_to_file(head);
-				printf("Ìí¼Ó³É¹¦!\n°´»Ø³µ¼ü¼ÌÐø...");
+				printf("添加成功!\n按回车键继续...");
 				getchar();
 				getchar();
 				break;
-			case 2://2. É¾³ýÑ§Éú
-				printf("Ï£ÍûÉ¾³ýÄÄ¸öÑ§Éú£¬ÇëÊäÈëÑ§ºÅ£º");
+			case 2://2. 删除学生
+				printf("希望删除哪个学生，请输入学号：");
 				scanf("%d",&delete_id);
 				head=delete_student(head,delete_id);
 				save_to_file(head);
-				printf("\n°´»Ø³µ¼ü¼ÌÐø...");
+				printf("\n按回车键继续...");
 				getchar();
 				getchar();
 				break;
-			case 3://3. ²éÕÒÑ§Éú
-				printf("ÇëÊäÈë¸ÃÑ§ÉúÑ§ºÅ£º");
+			case 3://3. 查找学生
+				printf("请输入该学生学号：");
 				scanf("%d",&find_id);
 				find_student(head,find_id);
-				printf("\n°´»Ø³µ¼ü¼ÌÐø...");
+				printf("\n按回车键继续...");
 				getchar();
 				getchar();
 				break;
-			case 4://4. ÐÞ¸Ä³É¼¨
-				printf("ÇëÊäÈë¸ÃÑ§ÉúÑ§ºÅ£º");
+			case 4://4. 修改成绩
+				printf("请输入该学生学号：");
 				scanf("%d",&find_id);
-				printf("ÇëÊäÈë¸ÃÑ§ÉúÐÂµÄ³É¼¨£º");
+				printf("请输入该学生新的成绩：");
 				scanf("%f",&new_score);
 				head=update_score(head,find_id,new_score);
 				save_to_file(head);
-				printf("\n°´»Ø³µ¼ü¼ÌÐø...");
+				printf("\n按回车键继续...");
 				getchar();
 				getchar();
 				break;
-			case 5://5. ÏÔÊ¾È«²¿
+			case 5://5. 显示全部
 				print_all(head);
-				printf("\n°´»Ø³µ¼ü¼ÌÐø...");
+				printf("\n按回车键继续...");
 				getchar();
 				getchar();
 				break;
-			case 6://6. ¼ÆËãÆ½¾ù·Ö
-				printf("Õâ¸ö°àÆ½¾ù·ÖÎª%.2f\n",calc_average(head));
-				printf("\n°´»Ø³µ¼ü¼ÌÐø...");
+			case 6://6. 计算平均分
+				printf("这个班平均分为%.2f\n",calc_average(head));
+				printf("\n按回车键继续...");
 				getchar();
 				getchar();
 				break;
-			case 7://7. ±£´æµ½ÎÄ¼þ
+			case 7://7. 保存到文件
 				save_to_file(head);
-				printf("\n°´»Ø³µ¼ü¼ÌÐø...");
+				printf("\n按回车键继续...");
 				getchar();
 				getchar();
 				break;
-			case 8://8. ´ÓÎÄ¼þ¶ÁÈ¡
+			case 8://8. 从文件读取
 				head=load_from_file(head);
 				break;
 			case 0:
 				break;
 			default:
-				printf("ÎÞÐ§Ñ¡Ïî\n");
+				printf("无效选项\n");
 		}
 	}while(choise!=0);
 	save_to_file(head);
 	free_all(head);
-	printf("¸ÐÐ»Ê¹ÓÃ!\n");
+	printf("感谢使用!\n");
 	return 0;
 }

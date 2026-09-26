@@ -8,13 +8,13 @@ struct Node* create_new_node(int data){
 	struct Node* new_node=(struct Node*)malloc(sizeof(struct Node));
 	new_node->data=data;
 	new_node->next=NULL;
-	return new_node;//ÕâÀï»á´´ÔìÒ»¸ö¿Õ½Úµã£¬ĞèÒªÊäÈëdataÒ»¸öÖµ 
+	return new_node;//è¿™é‡Œä¼šåˆ›é€ ä¸€ä¸ªç©ºèŠ‚ç‚¹ï¼Œéœ€è¦è¾“å…¥dataä¸€ä¸ªå€¼ 
 }
 struct Node* create_head_node(int data,struct Node* head){
 	struct Node* new_node=(struct Node*)malloc(sizeof(struct Node));
 	new_node->data=data;
 	new_node->next=head;
-	return new_node;//ÕâÀïÔÚ¿ªÍ·´´Ôì½Úµã£¬ĞèÒªÊäÈëdataºÍhead 
+	return new_node;//è¿™é‡Œåœ¨å¼€å¤´åˆ›é€ èŠ‚ç‚¹ï¼Œéœ€è¦è¾“å…¥dataå’Œhead 
 }
 struct Node* create_tail_node(int data,struct Node* head){
 	struct Node* new_node=(struct Node*)malloc(sizeof(struct Node)),*current=head;
@@ -24,14 +24,14 @@ struct Node* create_tail_node(int data,struct Node* head){
 	new_node->data=data;
 	new_node->next=NULL;
 	current->next=new_node;
-	return head;//ÕâÀïÔÚÎ²²¿´´Ôì½Úµã£¬ĞèÒªdataºÍhead
+	return head;//è¿™é‡Œåœ¨å°¾éƒ¨åˆ›é€ èŠ‚ç‚¹ï¼Œéœ€è¦dataå’Œhead
 }
 //struct Node* create_insert_node(int data,struct Node* place){
 //	struct Node* new_node=(struct Node*)malloc(sizeof(struct Node));
 //	new_node->data=data;
 //	new_node->next=place->next;
 //	place->next=new_node;
-//	return new_node;//ÕâÀï²åÈë½Úµã£¬ĞèÒªdataºÍ²åÈëÎ»ÖÃµÄÉÏÒ»¸ö½Úµã 
+//	return new_node;//è¿™é‡Œæ’å…¥èŠ‚ç‚¹ï¼Œéœ€è¦dataå’Œæ’å…¥ä½ç½®çš„ä¸Šä¸€ä¸ªèŠ‚ç‚¹ 
 //}
 struct Node* delete_node(int target,struct Node *head){
 	struct Node* current=head,*temp;

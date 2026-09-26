@@ -3,6 +3,6 @@ int main(){
 	int num = 10;
 	float score = 95.5;
 	char level = 'A';
-	printf("Ñ§ºÅ£º%d\n³É¼¨£º%.2f\nµÈ¼¶£º%c\n",num,score,level);
+	printf("å­¦å·ï¼š%d\næˆç»©ï¼š%.2f\nç­‰çº§ï¼š%c\n",num,score,level);
 
 }
