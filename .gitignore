@@ -4,6 +4,19 @@ __pycache__/
 .venv/
 venv/
 
+# C 编译产物
+*.exe
+*.o
+*.obj
+*.dev
+*.layout
+Makefile.win
+
+# 程序运行产生的数据
+stu.txt
+student.txt
+student_information.txt
+
 # 密钥与本地数据，不要上传
 api-key.txt
 chat_history.json
