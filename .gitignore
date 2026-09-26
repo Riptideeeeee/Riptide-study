@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 密钥与本地数据，不要上传
+api-key.txt
+chat_history.json
+content1.txt
+
+# IDE
+.idea/
+.vscode/
