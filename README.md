@@ -90,8 +90,6 @@ c/
 | pygame/game1.py | pygame 入门，星星移动 |
 | pygame/game1 ai.py | 接水果小游戏 |
 | 飞机大战/plane.py | 飞机大战 |
-| 飞行棋/main.py | 飞行棋 |
-| 飞行棋/test.py | 飞行棋相关测试 |
 
 ## 完整项目 `py/projects`
 
