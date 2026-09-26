@@ -87,8 +87,6 @@ c/
 | 俄罗斯方块.py | tkinter 版俄罗斯方块 |
 | 文字冒险.py | 文字冒险，含事件系统和 Boss 战 |
 | pygame/game1.py | pygame 入门，星星移动 |
-| pygame/game1 ai.py | 接水果小游戏 |
-| 飞机大战/plane.py | 飞机大战 |
 
 ## 完整项目 `py/projects`
 
@@ -120,7 +118,6 @@ c/
 | --- | --- |
 | Guess Num.py | 猜数字游戏 |
 | Guess Num修改版.py | 猜数字，改进版 |
-| 打地鼠.py | 打地鼠游戏 |
 | text.py | 文本框组件 |
 | 测试1.py | 零散测试 |
 | 点名.py | 随机点名器 |
